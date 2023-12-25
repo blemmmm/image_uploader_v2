@@ -28,5 +28,5 @@ services:
     depends_on:
       - server
 networks:
-  groufie-network:
+  imagehippo-network:
     name: imagehippo-network
