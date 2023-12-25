@@ -8,7 +8,7 @@ services:
     ports:
       - 3001:3001
     networks:
-      - groufie-network
+      - imagehippo-network
   caddy:
     image: caddy:2
     restart: unless-stopped
