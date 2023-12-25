@@ -17,7 +17,7 @@ const HomeView = () => {
   // const [new_metadata, set_new_metadata] = useState<any>(null);
   const [is_open, set_is_open] = useState(false);
   const [show_overlay, set_show_overlay] = useState({ display: 'none' });
-  const link = `http://localhost:3000/i/${uploaded_img}`;
+  const link = `https://imagehippo.blem.dev/i/${uploaded_img}`;
   const inputRef = useRef<HTMLInputElement>(null);
 
   const close_modal = () => {
@@ -43,7 +43,7 @@ const HomeView = () => {
           Swal.showLoading();
         },
         didClose: async () => {
-          const response = await fetch('http://localhost:3000/upload', {
+          const response = await fetch('https://imagehippo.blem.dev/upload', {
             method: 'POST',
             body: form_data,
             credentials: 'include',
@@ -137,7 +137,7 @@ const HomeView = () => {
           <div className="flex justify-center items-center flex-col py-6 bg-gray-50 h-[500px] w-[500px]">
             <div className="relative">
               <img
-                src={`http://localhost:3000/i/${uploaded_img}`}
+                src={`https://imagehippo.blem.dev/i/${uploaded_img}`}
                 className="object-scale-down h-[500px] w-[500px]"
               />
               <button

@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  server:
+    build:
+      context: ./ # path of root directory
+      dockerfile: ./docker/server/Dockerfile # path relative to root directory
+    restart: unless-stopped
+    ports:
+      - 3001:3001
+    networks:
+      - groufie-network
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+      - 443:443/udp
+    volumes:
+      - ./docker/volumes/caddy/data:/data
+      - ./docker/volumes/caddy/config:/config
+      - ./docker/volumes/caddy/logs:/var/log/caddy/
+      - ./docker/caddy/Caddyfile:/etc/caddy/Caddyfile
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - imagehippo-network
+    depends_on:
+      - server
+networks:
+  groufie-network:
+    name: imagehippo-network

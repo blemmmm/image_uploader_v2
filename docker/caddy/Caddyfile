@@ -1,0 +1,24 @@
+{
+  log {
+    format console
+  }
+}
+
+http://localhost, http://0.0.0.0 {
+  handle {
+    reverse_proxy server:3001
+  }
+}
+
+imagehippo.blem.dev {
+  header {
+    Strict-Transport-Security "max-age=63072000"
+    defer
+  }
+  handle {
+    reverse_proxy server:3001
+  }
+  tls pera.blessly@gmail.com {
+    protocols tls1.3
+  }
+}
