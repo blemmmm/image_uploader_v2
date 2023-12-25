@@ -14,8 +14,8 @@ services:
     restart: unless-stopped
     ports:
       - 80:80
-      - 443:443
-      - 443:443/udp
+      - 442:442
+      - 442:442/udp
     volumes:
       - ./docker/volumes/caddy/data:/data
       - ./docker/volumes/caddy/config:/config
