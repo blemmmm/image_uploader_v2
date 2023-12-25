@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: 'http://localhost:5173', // Replace with your client's URL
+    origin: 'https://imagehippo.blem.dev', // Replace with your client's URL
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // Allow cookies and authentication headers
   }),
