@@ -13,7 +13,7 @@ services:
     image: caddy:2
     restart: unless-stopped
     ports:
-      - 80:80
+      - 81:81
       - 442:442
       - 442:442/udp
     volumes:
